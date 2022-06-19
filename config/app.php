@@ -185,6 +185,8 @@ return [
         /*
          * Package Service Providers...
          */
+        // Todo: add Jenssegers mongodb service provider class. Progress: done.
+        Jenssegers\Mongodb\MongodbServiceProvider::class,
 
         /*
          * Application Service Providers...
