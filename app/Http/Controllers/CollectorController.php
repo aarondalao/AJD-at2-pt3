@@ -13,11 +13,11 @@ class CollectorController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index()
+    public function index(Request $myRequest)
     {
-        $myRequest = Request::all();
+//        $myRequest = Request::all();
         if(!is_null($myRequest['search'])){
             $searchThis = $myRequest['search'];
         }else{
@@ -25,7 +25,7 @@ class CollectorController extends Controller
         }
 
         if($searchThis === ''){
-            $collectors =  Collector::paginate(10);
+            $collectors =  Collector::paginate(15);
         }else{
             $collectors = Collector::where('family_name', 'like', "%{$searchThis}%")->paginate();
         }
@@ -42,16 +42,19 @@ class CollectorController extends Controller
     {
 
         // edit this later and remove the passed parameters on this method.  if else goes wrong.
-        // $cars = Car::all();
+         $cars = Car::all();
 
-        return view('collectors.create', compact($cars->all()));
+        return view('collectors.create', compact(
+//            $cars->all()
+            'cars')
+        );
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreCollectorRequest  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreCollectorRequest $request)
     {
@@ -74,7 +77,7 @@ class CollectorController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Collector  $collector
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function show(Collector $collector)
     {
@@ -85,7 +88,7 @@ class CollectorController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Collector  $collector
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit(Collector $collector)
     {
@@ -97,7 +100,7 @@ class CollectorController extends Controller
      *
      * @param  \App\Http\Requests\UpdateCollectorRequest  $request
      * @param  \App\Models\Collector  $collector
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(UpdateCollectorRequest $request, Collector $collector)
     {
@@ -144,7 +147,7 @@ class CollectorController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Collector  $collector
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Collector $collector)
     {
