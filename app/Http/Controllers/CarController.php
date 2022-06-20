@@ -16,9 +16,8 @@ class CarController extends Controller
      */
     public function index()
     {
-        // a searchbar would be nice.
+        // searchbar from TODO #9 .
         $cars = Car::paginate(15);
-
         return view('cars.index', compact('cars'));
     }
 
@@ -29,18 +28,26 @@ class CarController extends Controller
      */
     public function create()
     {
-        //
+        return view('cars.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreCarRequest  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreCarRequest $request)
     {
-        //
+        $myNewData = [
+            "code" => $request->code,
+            "manufacturer" => $request->manufacturer,
+            "model" => $request->model,
+            "price" =>$request->price,
+        ];
+        Car::create($myNewData);
+
+        return redirect()->route('cars.index')->with('success', 'new car record successfully created');
     }
 
     /**

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex">
-            <h2 class="flex-1 font-semibold text-xl text-gray-800 leading-tight">
+            <h2 class="flex-1 font-semibold mt-2 pt-2 text-2xl text-gray-800 leading-tight">
                 {{ __('Collectors') }}
             </h2>
 
@@ -63,8 +63,7 @@
                     <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis overflow-hidden">
                         {{ Str::of($collector->family_name)->limit(24) }}
                     </td>
-                    <td class="w-2/12 text-left px-2 py-1">{{ count($collector->cars??[])
-                }}</td>
+                    <td class="w-2/12 text-left px-2 py-1"> {{ count($collector->cars??[])  }}</td>
                     <td class="px-2 py-1">
                         <div class="flex justify-end gap-1">
 
