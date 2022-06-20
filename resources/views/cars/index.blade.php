@@ -2,7 +2,7 @@
     <x-slot name="header">
         <div class="flex">
             <h2 class="flex-1 font-semibold mt-2 pt-2 text-2xl text-gray-800 leading-tight">
-                {{ __('Cars') }}
+                {{ __('CarsAwesome') }}
             </h2>
 
             <div class=" pt-2 mr-6 mt-2">

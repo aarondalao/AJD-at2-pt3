@@ -77,11 +77,19 @@ class CarController extends Controller
      *
      * @param  \App\Http\Requests\UpdateCarRequest  $request
      * @param  \App\Models\Car  $car
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(UpdateCarRequest $request, Car $car)
     {
-        //
+        $myNewData = [
+            "code" => $request->code,
+            "manufacturer" => $request->manufacturer,
+            "model" => $request->model,
+            "price" =>$request->price,
+        ];
+        Car::create($myNewData);
+
+        return redirect()->route('cars.index')->with('success', 'new car record successfully updated');
     }
 
     /*
