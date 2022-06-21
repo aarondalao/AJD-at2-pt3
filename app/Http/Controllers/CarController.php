@@ -81,13 +81,13 @@ class CarController extends Controller
      */
     public function update(UpdateCarRequest $request, Car $car)
     {
-        $myNewData = [
-            "code" => $request->code,
-            "manufacturer" => $request->manufacturer,
-            "model" => $request->model,
-            "price" =>$request->price,
-        ];
-        Car::create($myNewData);
+
+        $car->update([
+            "code" => $request->code ?? $car->code,
+            "manufacturer" => $request->manufacturer ?? $car->manufacturer,
+            "model" => $request->model ?? $car->model,
+            "price" =>$request->price ?? $car->price,
+        ]);
 
         return redirect()->route('cars.index')->with('success', 'new car record successfully updated');
     }
@@ -108,10 +108,11 @@ class CarController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Car  $car
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Car $car)
+    public function destroy($id)
     {
-        //
+        Car::find($id)->delete();
+        return redirect()->route('cars.index')->with('success', 'successfully deleted this record');
     }
 }
