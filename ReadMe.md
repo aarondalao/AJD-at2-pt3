@@ -2,19 +2,21 @@
 
 # NoSQL (MongoDB) and Laravel Mini Application
 
-TODO: Add a quick description of this application.
+This mini application is to showcase what I've learned in the course of Diploma in Information Technology (Advanced programming). 
+The main function of this application add, modify and delete car collectors and their respective cars.
 
 ## I a. Project Details
 
-- Project Name: XXX-AT2-POR-Pt2
-- Author: YOUR_NAME_HERE <EMAIL_HERE>
-- Course: Diploma of Information Technology (SPECIALISATION_HERE)
+- Project Name: AJD-AT2-POR-Pt2
+- Author: Aaron John Dave Dalao 
+- Email: aaron.dalao@gmail.com / 20083979@tafe.wa.edu.au
+- Course: Diploma of Information Technology (Advanced Programming)
 
 ## I b. System Details
 
-- Laravel Version: XX.XX
-- MongoDB Version: XX.XX
-- PHP Version: XX.XX
+- Laravel Version: 9.17
+- MongoDB Version: 5.0.6 
+- PHP Version: 8.0
 - MongoDB Host: xxxxxxxxx
 
 ## TO DO

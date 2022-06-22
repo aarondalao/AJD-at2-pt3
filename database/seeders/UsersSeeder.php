@@ -29,10 +29,10 @@ class UsersSeeder extends Seeder
 
             [
                 'id' => 5,
-                'name' => 'YOUR NAME',
-                'email' => 'GIVEN@example.com',
+                'name' => 'Aaron Dalao',
+                'email' => 'aaron.dalao@example.com',
                 'email_verified_at' => now(),
-                'password' => Hash::make('Password1'),
+                'password' => Hash::make('Pa$$w0rd'),
                 'created_at' => now(),
                 'timezone' => 'Australia/Perth',
             ],

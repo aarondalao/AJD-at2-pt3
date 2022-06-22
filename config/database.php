@@ -93,13 +93,13 @@ return [
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
 
-        // Todo: Add Mongodb Driver and its respective config. Progress: Done
+
         'mongodb' => [
             'driver' => 'mongodb',
             'url' => env('MONGO_URL'),
             'host' => env('MONGO_HOST', 'localhost'),
             'port' => env('MONGO_PORT', '27017'),
-            'database' => env('MONGO_DATABASE', 'forge'),
+            'dsn' => env('MONGO_DB_BASE_URI', 'mongodb://').env('MONGO_HOST', 'localhost'),            'database' => env('MONGO_DATABASE', 'forge'),
             'username' => env('MONGO_USERNAME', 'forge'),
             'password' => env('MONGO_PASSWORD', ''),
             # 'dsn' => env('MONGO_URI',
