@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
 use App\Models\Car;
+use Illuminate\Http\Request;
+use function PHPUnit\Framework\isNull;
 
 
 class CarController extends Controller
@@ -14,11 +16,32 @@ class CarController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index()
+    public function index(Request $myRequest)
     {
         // searchbar from TODO #9 .
-        $cars = Car::paginate(15);
-        return view('cars.index', compact('cars'));
+        if (!is_null($myRequest['searchbar'])){
+            $searchThis = $myRequest['searchbar'];
+        }else{
+            $searchThis = '';
+        }
+
+        if($searchThis ===''){
+            $cars = Car::paginate(15);
+        }else{
+            // not as effective as i thought it would be...
+//            $cars = Car::where('(','code', 'like', "%{$searchThis}%", ')' ,'or',
+//                '(', 'manufacturer', 'like', "%{$searchThis}%", ')','or',
+//                '(', 'model', 'like' , "%{$searchThis}%", ')'
+//            )->paginate();
+
+            $cars =  Car::Where('code', 'like', "%{$searchThis}%")
+                ->orWhere('manufacturer', 'like', "%{$searchThis}%")
+                ->orWhere('model', 'like' , "%{$searchThis}%")
+                ->paginate();
+        }
+
+//        $cars = Car::paginate(15);
+        return view('cars.index', compact('cars','searchThis'));
     }
 
     /**
