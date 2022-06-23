@@ -38,7 +38,7 @@ class CollectorController extends Controller
      *
      *
      */
-    public function create(Car $cars)
+    public function create()
     {
 
         // edit this later and remove the passed parameters on this method.  if else goes wrong.
@@ -62,10 +62,13 @@ class CollectorController extends Controller
         // VALIDATION FIRST!!!
         // DIR: App\Http\Requests\StoreCollectorRequest.php
 
+        // update: get the entered data from request and store it in an  array variable with a whitespace separator.
+        $carArray = explode(' ', $request->cars);
+
         $myNewData = [
             "given_name" => $request->given_name,
             "family_name" => $request->family_name,
-            "cars" => $request->cars ?? [],
+            "cars" => $carArray ?? [],
         ];
 
         Collector::create($myNewData);

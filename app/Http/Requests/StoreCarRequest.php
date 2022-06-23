@@ -13,7 +13,7 @@ class StoreCarRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,20 @@ class StoreCarRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "code" => ['required', 'min:3'],
+            "manufacturer" => ['required', 'min:2'],
+            "model" => ['required', 'min:2', 'max:60'],
+            "price" => ['required', 'min:4', 'regex:/^\d*( \. \d{2})?/']
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'code.required' => 'code is required!' ,
+            'manufacturer.required' => 'manufacturer is required!' ,
+            'model.required' => 'model is required!',
+            'price.required' => 'price is required!',
         ];
     }
 }

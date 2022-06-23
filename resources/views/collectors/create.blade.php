@@ -41,7 +41,7 @@
         <div class="flex w-full mt-6 ">
             <label for="FamilyName" class="w-32 pt-2">{{ __('Family Name') }}</label>
             <input type="text" id="FamilyName" name="family_name"
-                   value="{{old('family_name')}}"
+                   value="{{ old('family_name') }}"
                    class="flex-1 rounded-md border-1 border-stone-300
                                            @error('family_name') text-red-500 border-red-500 @enderror">
         </div>
@@ -57,6 +57,7 @@
                    class="flex-1 rounded-md border-1 border-stone-300
                                            @error('cars') text-red-500 border-red-500 @enderror">
         </div>
+
         {{-- TODO: Add method to add cars to list of those owned --}}
         <p class="m-0 p-1 mt-1 ml-32 bg-sky-200 text-sky-800 text-italic">
             Cars Owned: This will not function at this time, next version will have method to
