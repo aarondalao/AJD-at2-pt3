@@ -63,7 +63,10 @@ class CollectorController extends Controller
         // DIR: App\Http\Requests\StoreCollectorRequest.php
 
         // update: get the entered data from request and store it in an  array variable with a whitespace separator.
-        $carArray = explode(' ', $request->cars);
+        // update 22/05/2022: not working when using checkboxes. prolly only limited when a user types data in textbox.
+
+//        $carArray = explode(' ', $request->cars);
+            $carArray = $request->car;
 
         $myNewData = [
             "given_name" => $request->given_name,

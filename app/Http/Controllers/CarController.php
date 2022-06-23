@@ -18,7 +18,7 @@ class CarController extends Controller
      */
     public function index(Request $myRequest)
     {
-        // searchbar from TODO #9 .
+
         if (!is_null($myRequest['searchbar'])){
             $searchThis = $myRequest['searchbar'];
         }else{

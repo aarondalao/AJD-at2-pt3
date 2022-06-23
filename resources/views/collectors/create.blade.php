@@ -51,22 +51,34 @@
         </p>
         @enderror
 
-        <div class="flex w-full my-6 ">
+
+        {{--  tick boxes component      --}}
+        {{--  created/edited by: aaron dalao        --}}
+        <div class="flex w-full h-max-98 h-80 my-6 py-2 ">
             <label for="Cars" class="w-32 pt-2">{{ __('Cars Owned') }}</label>
-            <input type="text" id="Cars" name="cars"
-                   class="flex-1 rounded-md border-1 border-stone-300
-                                           @error('cars') text-red-500 border-red-500 @enderror">
+            <div class="flex flex-1 flex-col flex-wrap">
+                @foreach($cars as $car)
+                    <div class=" transition ease-in-out delay-150 hover:-translate-y-1
+                             hover:scale-110 hover:bg-sky-300 hover:shadow-inner duration-300">
+                        <label>
+                            <input id="{{ $car->code }}" name="car[]" type="checkbox"
+                                   value="{{ $car->code }}">
+                            {{ $car->code  }}
+                        </label>
+                    </div>
+                @endforeach
+            </div>
         </div>
 
-        {{-- TODO: Add method to add cars to list of those owned --}}
-        <p class="m-0 p-1 mt-1 ml-32 bg-sky-200 text-sky-800 text-italic">
-            Cars Owned: This will not function at this time, next version will have method to
-            add owned cars.</p>
-        @error('cars')
-        <p class="m-0 p-0 mt-1 ml-32 italic text-red-500">
-            {{ __('A car is required.') }}
-        </p>
-        @enderror
+
+{{--        <p class="m-0 p-1 mt-1 ml-32 bg-sky-200 text-sky-800 text-italic">--}}
+{{--            Cars Owned: This will not function at this time, next version will have method to--}}
+{{--            add owned cars.</p>--}}
+{{--        @error('cars')--}}
+{{--        <p class="m-0 p-0 mt-1 ml-32 italic text-red-500">--}}
+{{--            {{ __('A car is required.') }}--}}
+{{--        </p>--}}
+{{--        @enderror--}}
 
         <div class="flex w-full my-6 gap-4">
             <label for="" class="w-32"> </label>

@@ -37,13 +37,12 @@
 
 
     <div class="flex w-full my-6 ">
-        {{-- TODO: Make sure that Owned Cars is replaced with Cars Owned --}}
         <p class="w-32 text-stone-500">{{ __('Cars Owned') }}</p>
-        <p class="flex-1 flex -ml-1 text-sm gap-1">
-            @foreach($collector->cars as $car)
-                <span class="p-1 px-2 rounded-full bg-stone-200 text-900">{{ $car }}</span>
+        <p class="flex-1 flex-wrap ml-1 text-sm gap-1">
+        @foreach($collector->cars as $car)
+                <span class="p-1 px-2 m-1 rounded-full bg-stone-200 text-900">{{ $car }}</span>
             @endforeach
-        </p>
+            </p>
     </div>
 
 
