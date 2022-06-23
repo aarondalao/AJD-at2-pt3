@@ -2,7 +2,7 @@
     <x-slot name="header">
         <div class="flex">
             <h2 class="flex-1 font-semibold mt-2 pt-2 text-2xl text-gray-800 leading-tight">
-                {{ __('Cars') }}
+                {{ __('CarsAwesome') }}
             </h2>
 
             <div class=" pt-2 mr-6 mt-2">
@@ -53,25 +53,25 @@
                     <div class="flex w-full mt-6">
                         <label for="code" class="w-32 pt-2"> {{ __('Code') }} </label>
                         <input type="text" id="code" name="code"
-                               class="flex-1 rounded-md border-1 border-stone-300">
+                               class="flex-1 rounded-md border-1 border-stone-300" aria-required="true">
 
                     </div>
                     <div class="flex w-full mt-6">
                         <label for="manufacturer" class="w-32 pt-2"> {{ __('Manufacturer') }} </label>
                         <input type="text" id="manufacturer" name="manufacturer"
-                               class="flex-1 rounded-md border-1 border-stone-300">
+                               class="flex-1 rounded-md border-1 border-stone-300" aria-required="true">
 
                     </div>
                     <div class="flex w-full mt-6">
                         <label for="model" class="w-32 pt-2"> {{ __('Model') }} </label>
                         <input type="text" id="model" name="model"
-                               class="flex-1 rounded-md border-1 border-stone-300">
+                               class="flex-1 rounded-md border-1 border-stone-300" aria-required="true">
 
                     </div>
                     <div class="flex w-full mt-6">
                         <label for="price" class="w-32 pt-2"> {{ __('Price') }} </label>
                         <input type="text" id="price" name="price"
-                               class="flex-1 rounded-md border-1 border-stone-300">
+                               class="flex-1 rounded-md border-1 border-stone-300" aria-required="true">
 
                     </div>
 
@@ -92,7 +92,7 @@
                                     transition ease-in-out duration-500">
                             {{ __('Reset') }}
                         </button>
-                        <a href="{{ route('collectors.index') }}"
+                        <a href="{{ route('cars.index') }}"
                            class="rounded text-center w-24 p-2
                                bg-stone-500 text-stone-100 border border-stone-50 shadow-md
                                hover:bg-stone-100 hover:border-stone-500 hover:text-stone-500 hover:shadow-sm
