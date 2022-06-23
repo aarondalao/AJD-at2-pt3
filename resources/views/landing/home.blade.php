@@ -5,7 +5,7 @@
 --}}
 
 <x-guest-layout>
-    <div class="bg-orange-300">
+    <div class="bg-orange-200">
         <h2 class="font-semibold text-xl text-gray-700 dark:text-gray-500 leading-tight m-auto px-6 py-4">
             {{ __("Cars N' Collectors") }}
         </h2>
@@ -29,8 +29,8 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-orange-300 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-orange-300 border-b border-gray-300 flex">
+            <div class="bg-orange-200 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-orange-200 border-b border-gray-300 flex">
 
 
                         <div class="bg-amber-100 mx-2 rounded w-96 mx-auto rounded-2xl shadow-lg border-emerald-800 border border-1

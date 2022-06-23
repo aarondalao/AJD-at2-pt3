@@ -6,16 +6,20 @@ use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
 use App\Models\Car;
 
+
 class CarController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        //
+        // a searchbar would be nice.
+        $cars = Car::paginate(15);
+
+        return view('cars.index', compact('cars'));
     }
 
     /**
@@ -47,7 +51,7 @@ class CarController extends Controller
      */
     public function show(Car $car)
     {
-        //
+        return view('cars.show', compact(['car']));
     }
 
     /**
@@ -58,7 +62,7 @@ class CarController extends Controller
      */
     public function edit(Car $car)
     {
-        //
+        return view('cars.edit', compact(['car']));
     }
 
     /**
@@ -71,6 +75,18 @@ class CarController extends Controller
     public function update(UpdateCarRequest $request, Car $car)
     {
         //
+    }
+
+    /*
+     *  Display the delete-specific resource
+     *
+     * @param  \App\Models\Car  $car
+     * @return \Illuminate\Http\Response
+     *
+     * */
+    public function delete(Car $car)
+    {
+        return view('cars.delete', compact(['car']));
     }
 
     /**
