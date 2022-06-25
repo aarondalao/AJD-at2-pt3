@@ -9,7 +9,7 @@ The main function of this application add, modify and delete car collectors and 
 
 - Project Name: AJD-AT2-POR-Pt2
 - Author: Aaron John Dave Dalao 
-- Email: aaron.dalao@gmail.com / 20083979@tafe.wa.edu.au
+- Email: 20083979@tafe.wa.edu.au / aaron.dalao@gmail.com 
 - Course: Diploma of Information Technology (Advanced Programming)
 
 ## I b. System Details
@@ -17,21 +17,16 @@ The main function of this application add, modify and delete car collectors and 
 - Laravel Version: 9.17
 - MongoDB Version: 5.0.6 
 - PHP Version: 8.0
-- MongoDB Host: xxxxxxxxx
-
-## TO DO
-
-> Anywhere that XXX appears, replace the xxx with your initials.
->
-> Replace any SHOUTING_SNAKE_CASE text with the appropriate details.
->
-> Update any TODO items as needed.
->
-> Once all above steps have been completed, remove this "TO DO section".
+- MongoDB Host: 
 
 ## II. Additional Notes
 
 TODO: Add any other notes you believe could be useful.
+
+Other resources used are as follows:
+
+* Palette Generator API for Tailwind CSS : https://tailwind.simeongriggs.dev/KhakiWeb/BBB193
+* Color Palette Generator: https://coolors.co/28536b-c2948a-7ea8be-b4826a-bbb193
 
 # III. Appendix
 

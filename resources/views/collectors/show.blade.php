@@ -51,7 +51,7 @@
 
         <a href="{{ route('collectors.index') }}"
            class="-ml-4 rounded text-center w-24 p-2
-                               bg-stone-500 text-stone-100 border border-stone-50 shadow-md
+                               bg-KhakiWeb-600 text-stone-100 border border-stone-50 shadow-md
                                hover:bg-stone-100 hover:border-stone-500 hover:text-stone-500 hover:shadow-sm
                                transition ease-in-out duration-500">
             {{ __('Back') }}
@@ -59,7 +59,7 @@
 
         <a href="{{ route('collectors.edit', $collector->id) }}"
            class="rounded w-24  p-2 text-center
-                                    bg-amber-500 text-amber-100 border border-amber-50 shadow-md
+                                    bg-BlueSapphire-300 text-amber-100 border border-amber-50 shadow-md
                                     hover:bg-amber-100 hover:border-amber-500 hover:text-amber-500 hover:shadow-sm
                                     transition ease-in-out duration-500">
             {{ __('Edit') }}
@@ -67,7 +67,7 @@
 
         <a href="{{ route('collectors.delete', $collector->id) }}"
            class="rounded text-center w-24 p-2
-                               bg-red-500 text-red-100 border border-red-50 shadow-md
+                               bg-CafeAuLait-300 text-red-100 border border-red-50 shadow-md
                                hover:bg-red-100 hover:border-red-500 hover:text-red-500 hover:shadow-sm
                                transition ease-in-out duration-500">
             {{ __('Delete') }}

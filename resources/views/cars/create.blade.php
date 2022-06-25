@@ -2,12 +2,12 @@
     <x-slot name="header">
         <div class="flex">
             <h2 class="flex-1 font-semibold mt-2 pt-2 text-2xl text-gray-800 leading-tight">
-                {{ __('CarsAwesome') }}
+                {{ __('Cars') }}
             </h2>
 
             <div class=" pt-2 mr-6 mt-2">
                 <a href="{{ route('cars.index') }}"
-                   class="flex-1 rounded text-stone-100 bg-red-500 p-2 mx-2">
+                   class="flex-1 rounded text-stone-100 bg-RosyBrown-500 p-2 mx-2">
                     {{ __("Go Back") }}
                 </a>
             </div>
@@ -80,21 +80,21 @@
                         <label for="" class="w-32"> </label>
                         <button type="submit"
                                 class="rounded w-24 p-2
-                                    bg-sky-500 -ml-4 text-sky-100 border border-sky-50 shadow-md
+                                    bg-KhakiWeb-600 -ml-4 text-sky-100 border border-sky-50 shadow-md
                                     hover:bg-sky-100 hover:border-sky-500 hover:text-sky-500 hover:shadow-sm
                                     transition ease-in-out duration-500">
                             {{ __('Save') }}
                         </button>
                         <button type="reset" value="reset"
                                 class="rounded w-24  p-2
-                                    bg-amber-500 text-amber-100 border border-amber-50 shadow-md
+                                    bg-BlueSapphire-300 text-amber-100 border border-amber-50 shadow-md
                                     hover:bg-amber-100 hover:border-amber-500 hover:text-amber-500 hover:shadow-sm
                                     transition ease-in-out duration-500">
                             {{ __('Reset') }}
                         </button>
                         <a href="{{ route('cars.index') }}"
                            class="rounded text-center w-24 p-2
-                               bg-stone-500 text-stone-100 border border-stone-50 shadow-md
+                               bg-CafeAuLait-300 text-stone-100 border border-stone-50 shadow-md
                                hover:bg-stone-100 hover:border-stone-500 hover:text-stone-500 hover:shadow-sm
                                transition ease-in-out duration-500">
                             {{ __('Back') }}

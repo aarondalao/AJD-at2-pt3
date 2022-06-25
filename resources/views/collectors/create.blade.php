@@ -1,12 +1,12 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex">
-            <h2 class="flex-1 font-semibold text-xl text-gray-800 leading-tight">
+            <h2 class="flex-1 font-semibold text-xl text-gray-200 leading-tight">
                 {{ __('Collectors') }}
             </h2>
-            <div>
+            <div class=" pt-2 mr-6 mt-2">
                 <a href="{{ route('collectors.create') }}"
-                   class="flex-0 rounded text-stone-100 bg-stone-500 p-1 mx-2">
+                   class="flex-1 rounded text-stone-100 bg-RosyBrown-500 p-2 mx-2">
                     {{ __("Add Collector") }}
                 </a>
             </div>
