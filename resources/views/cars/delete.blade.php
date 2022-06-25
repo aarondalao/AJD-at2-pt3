@@ -2,12 +2,12 @@
     <x-slot name="header">
         <div class="flex">
             <h2 class="flex-1 font-semibold mt-2 pt-2 text-3xl text-gray-800 leading-tight">
-                {{ __('CarsAwesome') }}
+                {{ __('Cars') }}
             </h2>
 
             <div class=" pt-2 mr-6 mt-2">
                 <a href="{{ route('cars.index') }}"
-                   class="flex-1 rounded text-stone-100 bg-red-700 p-2 mx-2">
+                   class="flex-1 rounded text-stone-100 bg-RosyBrown-500 p-2 mx-2">
                     {{ __("Go Back") }}
                 </a>
             </div>

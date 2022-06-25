@@ -78,7 +78,7 @@
 
             <button type="submit" name="save"
                     class="rounded w-24 p-2
-        bg-sky-500 -ml-4 text-sky-100 border border-sky-50
+        bg-KhakiWeb-600 -ml-4 text-sky-100 border border-sky-50
         hover:bg-sky-100 hover:border-sky-500 hover:text-sky-500
         transition ease-in-out duration-250">
                 {{ __('Save') }}
@@ -86,7 +86,7 @@
 
             <button type="submit" name="save"
                     class="rounded w-24  p-2
-        bg-amber-500 text-amber-100 border border-amber-50
+        bg-CafeAuLait-300 text-amber-100 border border-amber-50
         hover:bg-amber-100 hover:border-amber-500 hover:text-amber-500
         transition ease-in-out duration-250">
                 {{ __('Clear') }}
@@ -94,7 +94,7 @@
 
             <a href=""
                class="rounded text-center w-24 p-2
-   bg-stone-500 text-stone-100 border border-stone-50
+   bg-BlueSapphire-300 text-stone-100 border border-stone-50
    hover:bg-stone-100 hover:border-stone-500 hover:text-stone-500
    transition ease-in-out duration-250">
                 {{ __('Back') }}

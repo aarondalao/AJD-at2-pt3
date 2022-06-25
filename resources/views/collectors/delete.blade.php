@@ -12,7 +12,7 @@
     </x-slot>
 
 
-    <div class="flex w-full mt-2 my-6 bg-red-500 text-white p-4 rounded-md ">
+    <div class="flex w-full mt-2 my-6 bg-PewterBlue-500 text-white p-4 rounded-md ">
         <h3 class="flex-1 text-xl font-black ">
             {{ __('Delete Collector') }}
         </h3>

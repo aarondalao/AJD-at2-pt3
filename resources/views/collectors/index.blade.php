@@ -1,13 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex">
-            <h2 class="flex-1 font-semibold mt-2 pt-2 text-2xl text-gray-800 leading-tight">
+            <h2 class="flex-1 font-semibold mt-2 pt-2 text-2xl text-gray-200 leading-tight">
                 {{ __('Collectors') }}
             </h2>
 
             <div class=" pt-2 mr-6 mt-2">
                 <a href="{{ route('collectors.create') }}"
-                   class="flex-0 rounded text-stone-100 bg-stone-500 p-2 mx-2">
+                   class="flex-0 rounded text-stone-100 bg-RosyBrown-500 p-2 mx-2">
                     {{ __("Add Collector") }}
                 </a>
             </div>
@@ -41,13 +41,13 @@
     @if(count($collectors??[])>0)
         <table
             class="table bg-amber-100 max-w-6xl rounded-md overflow-hidden border border-amber-800 mx-auto  my-4 p-4">
-            <thead class="bg-amber-700 text-amber-50">
-            <tr class="gap-2 ">
-                <th class="bg-amber-700 text-left py-2 px-2 mx-2">#</th>
-                <th class="bg-amber-700 text-left py-2 px-2 mx-2">{{ __('Given Name') }}</th>
-                <th class="bg-amber-700 text-left py-2 px-2 mx-2">{{ __('Family Name') }}</th>
-                <th class="bg-amber-700 text-left py-2 px-2 mx-2">{{ __('Cars Owned') }}</th>
-                <th class="bg-amber-700 text-right py-2 pr-4 mx-2">{{ __('Actions') }}</th>
+            <thead class="bg-PewterBlue-500 text-amber-50">
+            <tr class=" gap-2 ">
+                <th class="text-left py-2 px-2 mx-2">#</th>
+                <th class="text-left py-2 px-2 mx-2">{{ __('Given Name') }}</th>
+                <th class="text-left py-2 px-2 mx-2">{{ __('Family Name') }}</th>
+                <th class="text-left py-2 px-2 mx-2">{{ __('Cars Owned') }}</th>
+                <th class="text-right py-2 pr-4 mx-2">{{ __('Actions') }}</th>
             </tr>
             </thead>
             <tbody class="">
@@ -68,30 +68,21 @@
                         <div class="flex justify-end gap-1">
 
                             <a href="{{ route('collectors.show', $collector->id) }}"
-                               class="px-2 py-1 rounded text-center w-16
-                                  bg-emerald-500 text-emerald-100 border border-emerald-50
-                                  hover:bg-emerald-100 hover:border-emerald-500 hover:text-emerald-700 hover:shadow-inner
-                                  hover:shadow-sm hover:shadow-emerald-900
-                                  transition ease-in-out duration-500">
+                               class="mainContent__showButton transition ease-in-out delay-150 hover:-translate-y-1
+                             hover:scale-110 hover:bg-blue-700 hover:shadow-inner duration-300 rounded bg-KhakiWeb-600 text-white m-1 p-1">
                                 {{ __('View') }}
                             </a>
 
                             <a href="{{ route('collectors.edit', $collector->id) }}"
-                               class="px-2 py-1 rounded text-center w-16
-                                  bg-sky-500 text-sky-100 border border-sky-50
-                                  hover:bg-sky-100 hover:border-sky-500 hover:text-sky-700 hover:shadow-inner
-                                  hover:shadow-sm hover:shadow-sky-900
-                                  transition ease-in-out duration-500">
+                               class="mainContent__editButton transition ease-in-out delay-150 hover:-translate-y-1
+                             hover:scale-110 hover:bg-orange-700 duration-300 rounded bg-BlueSapphire-300 text-white m-1 p-1">
                                 {{ __('Edit') }}
                             </a>
 
 
                             <a href="{{ route('collectors.delete', $collector->id) }}"
-                               class="px-2 py-1 rounded text-center w-16
-                                                  bg-red-50 text-red-500 border border-red-500
-                                                  hover:bg-red-500 hover:border-red-500 hover:text-red-50 hover:shadow-inner
-                                                  hover:shadow-red-900
-                                                  transition ease-in-out duration-500">
+                               class="mainContent__deleteButton transition ease-in-out delay-150 hover:-translate-y-1
+                             hover:scale-110 hover:bg-red-700 duration-300 rounded bg-CafeAuLait-300 text-white m-1 p-1">
                                 {{ __('Delete') }}
                             </a>
 

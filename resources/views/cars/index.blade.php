@@ -2,12 +2,12 @@
     <x-slot name="header">
         <div class="flex">
             <h2 class="flex-1 font-semibold mt-2 pt-2 text-2xl text-gray-800 leading-tight">
-                {{ __('CarsAwesome') }}
+                {{ __('Cars') }}
             </h2>
 
-            <div class=" pt-2 mr-6 mt-2">
+            <div class="pt-2 mr-6 mt-2">
                 <a href="{{ route('cars.create') }}"
-                   class="flex-0 rounded text-stone-100 bg-stone-500 p-2 mx-2">
+                   class="flex-0 rounded text-stone-100 bg-RosyBrown-500 p-2 mx-2">
                     {{ __("Add Cars") }}
                 </a>
             </div>
@@ -68,13 +68,13 @@
         <table class="table bg-amber-100 max-w-6xl rounded-md overflow-hidden border border-amber-800 mx-auto my-4 p-4">
 
             <thead class="text-amber-50">
-            <tr class="gap-2">
-                <th class="bg-amber-700 text-left py-2 px-2 mx-2">#</th>
-                <th class="bg-amber-700 text-left py-2 px-2 mx-2">{{ __('Code') }}</th>
-                <th class="bg-amber-700 text-left py-2 px-2 mx-2">{{ __('Manufacturer') }}</th>
-                <th class="bg-amber-700 text-left py-2 px-2 mx-2">{{ __('Model') }}</th>
-                <th class="bg-amber-700 text-left py-2 px-2 mx-2">{{ __('Price (AUD)') }}</th>
-                <th class="bg-amber-700 text-left py-2 px-2 mx-2">{{ __('Actions') }}</th>
+            <tr class="bg-PewterBlue-500 gap-2">
+                <th class="text-left py-2 px-2 mx-2">#</th>
+                <th class="text-left py-2 px-2 mx-2">{{ __('Code') }}</th>
+                <th class="text-left py-2 px-2 mx-2">{{ __('Manufacturer') }}</th>
+                <th class="text-left py-2 px-2 mx-2">{{ __('Model') }}</th>
+                <th class="text-left py-2 px-2 mx-2">{{ __('Price (AUD)') }}</th>
+                <th class="text-left py-2 px-2 mx-2">{{ __('Actions') }}</th>
             </tr>
             </thead>
             <tbody>
@@ -106,7 +106,7 @@
                     <td class="px-2 py-1">
                         <div class="flex justify-end gap-1">
                             <button class="mainContent__showButton transition ease-in-out delay-150 hover:-translate-y-1
-                             hover:scale-110 hover:bg-blue-700 hover:shadow-inner duration-300 rounded bg-sky-300 text-white m-1 p-1">
+                             hover:scale-110 hover:bg-blue-700 hover:shadow-inner duration-300 rounded bg-KhakiWeb-600 text-white m-1 p-1">
                                 {{--                                <i class="fa-solid fa-circle-info"></i>&nbsp;--}}
                                 <a class="" href="{{ route('cars.show', $car->id) }}">
                                     {{__('View')}}
@@ -114,7 +114,7 @@
                             </button>
 
                             <button class="mainContent__editButton transition ease-in-out delay-150 hover:-translate-y-1
-                             hover:scale-110 hover:bg-orange-700 duration-300 rounded bg-amber-400 text-white m-1 p-1">
+                             hover:scale-110 hover:bg-orange-700 duration-300 rounded bg-BlueSapphire-300 text-white m-1 p-1">
                                 {{--                                <i class="fa-solid fa-file-pen"></i>&nbsp;--}}
                                 <a class="" href="{{ route('cars.edit', $car->id) }}">
                                     Edit
@@ -122,7 +122,7 @@
                             </button>
 
                             <button class="mainContent__deleteButton transition ease-in-out delay-150 hover:-translate-y-1
-                             hover:scale-110 hover:bg-red-700 duration-300 rounded bg-red-400 text-white m-1 p-1">
+                             hover:scale-110 hover:bg-red-700 duration-300 rounded bg-CafeAuLait-300 text-white m-1 p-1">
                                 {{--                                <i class="fa-solid fa-file-pen"></i>&nbsp;--}}
                                 <a class="" href="{{ route('cars.delete', $car->id) }}">
                                     Delete
