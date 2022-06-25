@@ -1,3 +1,34 @@
+# I. Introduction
+
+# NoSQL (MongoDB) and Laravel Mini Application
+
+This mini application is to showcase what I've learned in the course of Diploma in Information Technology (Advanced programming). 
+The main function of this application add, modify and delete car collectors and their respective cars.
+
+## I a. Project Details
+
+- Project Name: AJD-AT2-POR-Pt2
+- Author: Aaron John Dave Dalao 
+- Email: 20083979@tafe.wa.edu.au / aaron.dalao@gmail.com 
+- Course: Diploma of Information Technology (Advanced Programming)
+
+## I b. System Details
+
+- Laravel Version: 9.17
+- MongoDB Version: 5.0.6 
+- PHP Version: 8.0
+- MongoDB Host: 
+
+## II. Additional Notes
+
+TODO: Add any other notes you believe could be useful.
+
+Other resources used are as follows:
+
+* Palette Generator API for Tailwind CSS : https://tailwind.simeongriggs.dev/KhakiWeb/BBB193
+* Color Palette Generator: https://coolors.co/28536b-c2948a-7ea8be-b4826a-bbb193
+
+
 ## III a. Code Style Guidelines
 The following guidelines should be applied to your code as it is developed. Many may be applied via the use of PhpStorm, PyCharm or similar plugins and code formatting.
 
