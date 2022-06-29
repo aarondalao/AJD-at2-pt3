@@ -39,12 +39,14 @@
 
     <div class="py-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="p-6 bg-white rounded-lg border-b border-gray-200">
-                <div class="flex w-full mt-2 mb-6 ">
-                    <h3 class="flex-1 border-1 border-stone-300 text-2xl">
+            <div class="min-w-lg max-w-6xl mx-auto my-8 px-8 py-8 bg-CafeAuLait-50 rounded-lg border-b border-gray-200">
+
+                <div class="flex w-full bg-PewterBlue-500 text-white p-4 rounded-md ">
+                    <h3 class="flex-1 text-xl font-black ">
                         {{ __('Edit this Car: ') }} {{ $car->manufacturer }} {{ $car->model  }}
                     </h3>
                 </div>
+
                 <form action="{{ route('cars.update',$car->id) }}" method="POST">
                     @csrf
                     @method('PUT')
@@ -52,32 +54,32 @@
 
                     <div class="flex w-full mt-6">
                         <label for="code" class="w-32 pt-2"> {{ __('Code') }} </label>
-                        <input type="text" id="code" name="code" placeholder="{{ $car->code  }}"
-                               class="flex-1 rounded-md border-1 border-stone-300" aria-required="true">
+                        <input type="text" id="code" name="code" value=" {{ $car->code }}"
+                               class="flex-1 rounded-md border-1 border-stone-300" aria-required="true" autofocus>
 
                     </div>
                     <div class="flex w-full mt-6">
                         <label for="manufacturer" class="w-32 pt-2"> {{ __('Manufacturer') }} </label>
-                        <input type="text" id="manufacturer" name="manufacturer" placeholder="{{ $car->manufacturer  }}"
-                               class="flex-1 rounded-md border-1 border-stone-300 aria-required="true">
+                        <input type="text" id="manufacturer" name="manufacturer" value="{{ $car->manufacturer  }}"
+                               class="flex-1 rounded-md border-1 border-stone-300" aria-required="true">
 
                     </div>
                     <div class="flex w-full mt-6">
                         <label for="model" class="w-32 pt-2"> {{ __('Model') }} </label>
-                        <input type="text" id="model" name="model" placeholder="{{ $car->model  }}"
+                        <input type="text" id="model" name="model" value="{{ $car->model  }}"
                                class="flex-1 rounded-md border-1 border-stone-300" aria-required="true">
 
                     </div>
                     <div class="flex w-full mt-6">
                         <label for="price" class="w-32 pt-2"> {{ __('Price') }} </label>
-                        <input type="text" id="price" name="price" placeholder="{{ $car->price  }}"
+                        <input type="text" id="price" name="price" value="{{ $car->price  }}"
                                class="flex-1 rounded-md border-1 border-stone-300" aria-required="true">
 
                     </div>
 
 
                     <div class="flex w-full my-6 gap-4">
-                        <label for="" class="w-32"> </label>
+                        <label for="" class="w-32"></label>
                         <button type="submit"
                                 class="rounded w-24 p-2
                                     bg-KhakiWeb-600 -ml-4 text-sky-100 border border-sky-50 shadow-md
@@ -85,6 +87,7 @@
                                     transition ease-in-out duration-500">
                             {{ __('Save') }}
                         </button>
+
                         <button type="reset" value="reset"
                                 class="rounded w-24  p-2
                                     bg-BlueSapphire-300 text-amber-100 border border-amber-50 shadow-md
@@ -92,6 +95,7 @@
                                     transition ease-in-out duration-500">
                             {{ __('Reset') }}
                         </button>
+
                         <a href="{{ route('cars.index') }}"
                            class="rounded text-center w-24 p-2
                                bg-CafeAuLait-300 text-stone-100 border border-stone-50 shadow-md

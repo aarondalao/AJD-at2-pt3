@@ -12,14 +12,22 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/fa.css') }}">
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body>
+        <header class="">
+            @include('layouts.header')
+        </header>
 
         <div class="font-sans text-gray-800 antialiased">
             {{ $slot }}
         </div>
+
+        <footer class="flex flex-shrink-0">
+            @include('layouts.footer')
+        </footer>
     </body>
 </html>

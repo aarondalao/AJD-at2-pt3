@@ -18,12 +18,12 @@
 
     <div class="py-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="p-6 bg-white rounded-lg border-b border-gray-200">
+            <div class="min-w-lg max-w-6xl mx-auto my-8 px-8 py-8 bg-CafeAuLait-50 rounded-lg border-b border-gray-200">
                 <div class="w-full mt-2 mb-6 ">
 
-                    <div class="flex w-full my-6 bg-red-700 text-red-100 rounded-md">
-                        <h3 class="ml-2 my-1 flex-1 text-2xl font-bold">
-                            {{ __('Deleting this Car and its details:')  }}
+                    <div class="flex w-full bg-PewterBlue-500 text-white p-4 rounded-md ">
+                        <h3 class="flex-1 text-xl font-black ">
+                            {{ __('Delete this Car') }}
                         </h3>
                     </div>
                     <div class="border-b-2 border-gray-400"></div>

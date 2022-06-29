@@ -36,73 +36,93 @@
         </div>
     </x-slot>
 
-    <!-- Main Content -->
+    {{--
+     session messages
+    --}}
 
-    @if(count($collectors??[])>0)
-        <table
-            class="table bg-amber-100 max-w-6xl rounded-md overflow-hidden border border-amber-800 mx-auto  my-4 p-4">
-            <thead class="bg-PewterBlue-500 text-amber-50">
-            <tr class=" gap-2 ">
-                <th class="text-left py-2 px-2 mx-2">#</th>
-                <th class="text-left py-2 px-2 mx-2">{{ __('Given Name') }}</th>
-                <th class="text-left py-2 px-2 mx-2">{{ __('Family Name') }}</th>
-                <th class="text-left py-2 px-2 mx-2">{{ __('Cars Owned') }}</th>
-                <th class="text-right py-2 pr-4 mx-2">{{ __('Actions') }}</th>
-            </tr>
-            </thead>
-            <tbody class="">
-            @foreach ($collectors as $key=>$collector)
-                <tr class="gap-2 border border-stone-500
+    @if($message = Session::get('success'))
+        <div
+            class="errorBlock bg-teal-100 max-w-6xl border-t-4 border-teal-500 rounded-b text-teal-900 mx-auto px-4 py-3
+            my-3 shadow-md"
+            role="alert">
+            <div class="errorBlock__wrapper flex">
+                <div class="errorBlock__messageBlock max-w-2xl mx-auto p-2">
+                    <i class="errorBlock__animatedIcon fa-solid fa-circle-info ml-5 pl-5 animate-bounce inline-block float-right"></i>
+                    <p class="errorBlock__messageHeader font-bold">Attention:</p>
+                    <p class="errorBlock__message text-sm">{{ $message }}</p>
+                </div>
+            </div>
+        </div>
+@endif
+
+<!-- Main Content -->
+
+    <div class="flex justify-center items-center m-10 p-10 rounded-md bg-CafeAuLait-50 h-4/5">
+        @if(count($collectors??[])>0)
+            <table
+                class="table bg-amber-100 w-11/12 rounded-md overflow-hidden border border-amber-800 min-w-lg max-w-6xl mx-auto my-8 px-8 py-8">
+                <thead class="bg-PewterBlue-500 text-amber-50">
+                <tr class=" gap-2 ">
+                    <th class="text-left py-2 px-2 mx-2">#</th>
+                    <th class="text-left py-2 px-2 mx-2">{{ __('Given Name') }}</th>
+                    <th class="text-left py-2 px-2 mx-2">{{ __('Family Name') }}</th>
+                    <th class="text-left py-2 px-2 mx-2">{{ __('Cars Owned') }}</th>
+                    <th class="text-right py-2 pr-4 mx-2">{{ __('Actions') }}</th>
+                </tr>
+                </thead>
+                <tbody class="">
+                @foreach ($collectors as $key=>$collector)
+                    <tr class="gap-2 border border-stone-500
                        hover:bg-stone-200 hover:border-b-1 hover:border-stone-500
                        transition ease-in-out">
-                    <td class="px-2 py-1">{{ $key+1 }}</td>
-                    <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis
+                        <td class="px-2 py-1">{{ $key+1 }}</td>
+                        <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis
                 overflow-hidden">
-                        {{ Str::of($collector->given_name)->limit(24) }}
-                    </td>
-                    <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis overflow-hidden">
-                        {{ Str::of($collector->family_name)->limit(24) }}
-                    </td>
-                    <td class="w-2/12 text-left px-2 py-1"> {{ count($collector->cars??[])  }}</td>
-                    <td class="px-2 py-1">
-                        <div class="flex justify-end gap-1">
+                            {{ Str::of($collector->given_name)->limit(24) }}
+                        </td>
+                        <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis overflow-hidden">
+                            {{ Str::of($collector->family_name)->limit(24) }}
+                        </td>
+                        <td class="w-2/12 text-left px-2 py-1"> {{ count($collector->cars??[])  }}</td>
+                        <td class="px-2 py-1">
+                            <div class="flex justify-end gap-1">
 
-                            <a href="{{ route('collectors.show', $collector->id) }}"
-                               class="mainContent__showButton transition ease-in-out delay-150 hover:-translate-y-1
+                                <a href="{{ route('collectors.show', $collector->id) }}"
+                                   class="mainContent__showButton transition ease-in-out delay-100 hover:-translate-y-1
                              hover:scale-110 hover:bg-blue-700 hover:shadow-inner duration-300 rounded bg-KhakiWeb-600 text-white m-1 p-1">
-                                {{ __('View') }}
-                            </a>
+                                    {{ __('View') }}
+                                </a>
 
-                            <a href="{{ route('collectors.edit', $collector->id) }}"
-                               class="mainContent__editButton transition ease-in-out delay-150 hover:-translate-y-1
+                                <a href="{{ route('collectors.edit', $collector->id) }}"
+                                   class="mainContent__editButton transition ease-in-out delay-100 hover:-translate-y-1
                              hover:scale-110 hover:bg-orange-700 duration-300 rounded bg-BlueSapphire-300 text-white m-1 p-1">
-                                {{ __('Edit') }}
-                            </a>
+                                    {{ __('Edit') }}
+                                </a>
 
 
-                            <a href="{{ route('collectors.delete', $collector->id) }}"
-                               class="mainContent__deleteButton transition ease-in-out delay-150 hover:-translate-y-1
+                                <a href="{{ route('collectors.delete', $collector->id) }}"
+                                   class="mainContent__deleteButton transition ease-in-out delay-100 hover:-translate-y-1
                              hover:scale-110 hover:bg-red-700 duration-300 rounded bg-CafeAuLait-300 text-white m-1 p-1">
-                                {{ __('Delete') }}
-                            </a>
+                                    {{ __('Delete') }}
+                                </a>
 
-                        </div>
+                            </div>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="5" class="p-2">
+                        {{ $collectors->links() }}
                     </td>
                 </tr>
-            @endforeach
-            </tbody>
-            <tfoot>
-            <tr>
-                <td colspan="5" class="p-2">
-                    {{ $collectors->links() }}
-                </td>
-            </tr>
-            </tfoot>
-        </table>
-    @else
-        <p>No collectors found</p>
-    @endif
-
+                </tfoot>
+            </table>
+        @else
+            <p>No collectors found</p>
+        @endif
+    </div>
 
     <script>
         function eraseText() {
