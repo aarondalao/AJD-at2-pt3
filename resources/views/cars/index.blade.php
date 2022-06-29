@@ -47,6 +47,11 @@
         </div>
     </x-slot>
 
+
+    {{--
+        success message card will appear at the top
+
+    --}}
     @if($message = Session::get('success'))
         <div
             class="errorBlock bg-teal-100 max-w-6xl border-t-4 border-teal-500 rounded-b text-teal-900 mx-auto px-4 py-3
@@ -63,89 +68,91 @@
     @endif
 
 
+    <div class="flex justify-center items-center m-8 p-8 rounded-md bg-CafeAuLait-50 h-4/5">
+        @if(count($cars ?? []) >0 )
+            <table
+                class="table bg-amber-100 min-w-lg max-w-6xl w-11/12 rounded-md overflow-hidden border border-amber-800 mx-auto my-8 px-8 py-8">
 
-    @if(count($cars ?? []) >0 )
-        <table class="table bg-amber-100 max-w-6xl rounded-md overflow-hidden border border-amber-800 mx-auto my-4 p-4">
-
-            <thead class="text-amber-50">
-            <tr class="bg-PewterBlue-500 gap-2">
-                <th class="text-left py-2 px-2 mx-2">#</th>
-                <th class="text-left py-2 px-2 mx-2">{{ __('Code') }}</th>
-                <th class="text-left py-2 px-2 mx-2">{{ __('Manufacturer') }}</th>
-                <th class="text-left py-2 px-2 mx-2">{{ __('Model') }}</th>
-                <th class="text-left py-2 px-2 mx-2">{{ __('Price (AUD)') }}</th>
-                <th class="text-left py-2 px-2 mx-2">{{ __('Actions') }}</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($cars as $key=>$car)
-                <tr class="gap-2 border border-stone-500
+                <thead class="text-amber-50">
+                <tr class="bg-PewterBlue-500 gap-2">
+                    <th class="text-left py-2 px-2 mx-2">#</th>
+                    <th class="text-left py-2 px-2 mx-2">{{ __('Code') }}</th>
+                    <th class="text-left py-2 px-2 mx-2">{{ __('Manufacturer') }}</th>
+                    <th class="text-left py-2 px-2 mx-2">{{ __('Model') }}</th>
+                    <th class="text-left py-2 px-2 mx-2">{{ __('Price (AUD)') }}</th>
+                    <th class="text-left py-2 px-2 mx-2">{{ __('Actions') }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($cars as $key=>$car)
+                    <tr class="gap-2 border border-stone-500
                        hover:bg-stone-200 hover:border-b-1 hover:border-stone-500
                        transition ease-in-out">
-                    <td class="px-2 py-1">
-                        {{ $key+1 }}
-                    </td>
-                    <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis
+                        <td class="px-2 py-1">
+                            {{ $key+1 }}
+                        </td>
+                        <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis
                 overflow-hidden">
-{{--                        {{ Str::of($car->code)->limit(30) }}--}}
+                            {{--                        {{ Str::of($car->code)->limit(30) }}--}}
                             {{ $car->code  }}
-                    </td>
-                    <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis
+                        </td>
+                        <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis
                 overflow-hidden">
-{{--                        {{ Str::of( $car->manufacturer)->limit(30) }}--}}
-                            {{ $car->manufacturer  }}
-                    <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis
+                        {{--                        {{ Str::of( $car->manufacturer)->limit(30) }}--}}
+                        {{ $car->manufacturer  }}
+                        <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis
                 overflow-hidden">
-{{--                        {{ Str::of($car->model)->limit(30) }}--}}
+                            {{--                        {{ Str::of($car->model)->limit(30) }}--}}
                             {{ $car->model  }}
-                    </td>
-                    <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis
+                        </td>
+                        <td class="max-w-4/12 w-4/12 text-left px-2 py-1 text-ellipsis
                 overflow-hidden">
-                        ${{$car->price}}
-                    </td>
-                    <td class="px-2 py-1">
-                        <div class="flex justify-end gap-1">
-                            <button class="mainContent__showButton transition ease-in-out delay-150 hover:-translate-y-1
+                            ${{$car->price}}
+                        </td>
+                        <td class="px-2 py-1">
+                            <div class="flex justify-end gap-1">
+                                <button class="mainContent__showButton transition ease-in-out delay-150 hover:-translate-y-1
                              hover:scale-110 hover:bg-blue-700 hover:shadow-inner duration-300 rounded bg-KhakiWeb-600 text-white m-1 p-1">
-                                {{--                                <i class="fa-solid fa-circle-info"></i>&nbsp;--}}
-                                <a class="" href="{{ route('cars.show', $car->id) }}">
-                                    {{__('View')}}
-                                </a>
-                            </button>
+                                    {{--                                <i class="fa-solid fa-circle-info"></i>&nbsp;--}}
+                                    <a class="" href="{{ route('cars.show', $car->id) }}">
+                                        {{__('View')}}
+                                    </a>
+                                </button>
 
-                            <button class="mainContent__editButton transition ease-in-out delay-150 hover:-translate-y-1
+                                <button class="mainContent__editButton transition ease-in-out delay-150 hover:-translate-y-1
                              hover:scale-110 hover:bg-orange-700 duration-300 rounded bg-BlueSapphire-300 text-white m-1 p-1">
-                                {{--                                <i class="fa-solid fa-file-pen"></i>&nbsp;--}}
-                                <a class="" href="{{ route('cars.edit', $car->id) }}">
-                                    Edit
-                                </a>
-                            </button>
+                                    {{--                                <i class="fa-solid fa-file-pen"></i>&nbsp;--}}
+                                    <a class="" href="{{ route('cars.edit', $car->id) }}">
+                                        Edit
+                                    </a>
+                                </button>
 
-                            <button class="mainContent__deleteButton transition ease-in-out delay-150 hover:-translate-y-1
+                                <button class="mainContent__deleteButton transition ease-in-out delay-150 hover:-translate-y-1
                              hover:scale-110 hover:bg-red-700 duration-300 rounded bg-CafeAuLait-300 text-white m-1 p-1">
-                                {{--                                <i class="fa-solid fa-file-pen"></i>&nbsp;--}}
-                                <a class="" href="{{ route('cars.delete', $car->id) }}">
-                                    Delete
-                                </a>
-                            </button>
+                                    {{--                                <i class="fa-solid fa-file-pen"></i>&nbsp;--}}
+                                    <a class="" href="{{ route('cars.delete', $car->id) }}">
+                                        Delete
+                                    </a>
+                                </button>
 
 
-                        </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                @endforeach
+
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="6" class="p-2">
+                        {{$cars->links()}}
                     </td>
-
                 </tr>
-            @endforeach
-
-            </tbody>
-            <tfoot>
-            <tr>
-                <td colspan="6" class="p-2">
-                    {{$cars->links()}}
-                </td>
-            </tr>
-            </tfoot>
-        </table>
-    @endif
+                </tfoot>
+            </table>
+        @endif
+    </div>
 
 
     <script>

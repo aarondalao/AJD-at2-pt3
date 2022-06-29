@@ -26,7 +26,6 @@ class UpdateCollectorRequest extends FormRequest
         return [
             "given name" => ['min:2'],
             "family_name" => ['required', 'min:2'],
-            "cars" => [],
         ];
     }
     /*

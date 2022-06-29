@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateCollectorRequest;
 use App\Models\Collector;
 use App\Models\Car;
 use Illuminate\Http\Request;
+use function PHPUnit\Framework\isEmpty;
 
 class CollectorController extends Controller
 {
@@ -98,7 +99,13 @@ class CollectorController extends Controller
      */
     public function edit(Collector $collector)
     {
-        return view('collectors.edit',compact(['collector']));
+        $carList = Car::all();
+        return view('collectors.edit',compact(
+            [
+                'collector',
+                'carList'
+            ]
+        ));
     }
 
     /**
@@ -110,28 +117,26 @@ class CollectorController extends Controller
      */
     public function update(UpdateCollectorRequest $request, Collector $collector)
     {
-        /*
-         *
-         * if( $collector->given_name != $request->given_name){
-            $collector->given_name = $request->given_name;
-        }
-        if( $collector->family_name != $request->family_name){
-            $collector->family_name = $request->family_name;
-        }
-        if( $collector->cars != $request->cars && !isEmpty($request->cars)) {
-            $collector->cars = $request->cars;
-        }else{
-            $collector->cars = [];
-        }
-        $collector->save();
-
-        */
+//         if( $collector->given_name != $request->given_name){
+//            $collector->given_name = $request->given_name;
+//        }
+//        if( $collector->family_name != $request->family_name){
+//            $collector->family_name = $request->family_name;
+//        }
+//        if( $collector->cars != $request->cars and !isEmpty($request->cars)) {
+//            $collector->cars = $request->cars;
+//        }else{
+//            $collector->cars = [];
+//        }
+//        $collector->save();
 
         $collector->update([
             "given_name" => $request->given_name ?? $collector->given_name,
             "family_name" => $request->family_name ?? $collector->family_name,
-            "cars" => $request->cars ?? [],
+            // $request has a "car" attribute not a "cars"
+            "cars" => $request->car ?? $collector->cars,
         ]);
+
 
         return redirect()->route('collectors.index')->with('success', 'the collector is successfully updated');
     }

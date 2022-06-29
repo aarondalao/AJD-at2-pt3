@@ -34,4 +34,5 @@ class Collector extends Model
      *
      * */
     protected $hidden=[];
+
 }

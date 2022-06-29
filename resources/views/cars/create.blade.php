@@ -39,10 +39,10 @@
 
     <div class="py-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="p-6 bg-white rounded-lg border-b border-gray-200">
-                <div class="flex w-full mt-2 mb-6 ">
-                    <h3 class="flex-1 border-1 border-stone-300 text-2xl">
-                        {{ __('Add New Car') }}
+            <div class="min-w-lg max-w-6xl mx-auto my-8 px-8 py-8 bg-CafeAuLait-50 rounded-lg border-b border-gray-200">
+                <div class="flex w-full bg-PewterBlue-500 text-white p-4 rounded-md ">
+                    <h3 class="flex-1 text-xl font-black ">
+                        {{ __('Add new Collector') }}
                     </h3>
                 </div>
                 <form action="{{ route('cars.store') }}" method="post">

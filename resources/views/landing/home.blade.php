@@ -2,29 +2,6 @@
     written by: aaron dalao
 --}}
 <x-guest-layout>
-    <div class="bg-BlueSapphire-500 w-full fixed">
-        <h2 class="font-semibold text-xl text-white leading-tight m-auto px-6 py-4">
-            {{ __("Cars N' Collectors") }}
-        </h2>
-
-        @if (Route::has('login'))
-            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                @auth
-                    <a href="{{ url('/dashboard') }}"
-                       class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                @else
-                    <a href="{{ route('login') }}" class="text-sm text-stone-100 underline">Log in</a>
-
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}"
-                           class="ml-4 text-sm text-stone-100 underline">Register</a>
-                    @endif
-                @endauth
-            </div>
-        @endif
-    </div>
-
-
     <div class="flex justify-center items-center h-screen bg-CafeAuLait-50 ">
         <div class="max-w-7xl my-auto mx-auto sm:px-6 lg:px-8">
             <div class="overflow-hidden shadow-md shadow-gray-400 sm:rounded-lg">

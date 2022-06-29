@@ -28,6 +28,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[landingPageController::class,'getAllForHome'])->name('home');
 
+Route::get('/TermsOfUse', fn() => view('landing.terms-of-use'))->name('termsOfUse');
+
 Route::group(['middleware' => ['auth']], function(){
     // collectors resources
     Route::resource('collectors',CollectorController::class);
